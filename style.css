@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    font-size: 62.5%;
+    --black: #0b0c0c;
+    --blue: #1d70b8;
+    --grey: #f2f2f2;
+    --light-grey: #fbfbfd;
+    --white: #ffffff;
+    background: rgb(40,40,40);
+    background: linear-gradient(90deg, rgba(40,40,40,1) 0%, rgba(65,85,110,1) 35%, rgba(40,40,40,1) 100%);
+}
+
+body {
+    /* 1rem = 10px */
+    font-size: 1.6rem;
+    font-family: 'Noto Serif', serif;
+    color: var(--black);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+p, .footer h5 {
+    line-height: 1.5;
+}
+
+a:link {
+    color: var(--blue);
+    text-decoration: underline dotted;
+}
+  
+a:visited {
+    color: var(--blue);
+    text-decoration: underline dotted;
+}
+  
+a:hover {
+    color: var(--blue);
+    text-decoration: underline;
+}
+  
+a:active {
+    color: var(--blue);
+    text-decoration: underline;
+}
+
+.container {
+    margin: auto;
+    width: 95%;
+    /* background-color: burlywood; */
+}
+
+h1 {
+    font-size: 2.8rem;
+}
+
+h2 {
+    font-size: 2.4rem;
+}
+
+h3 {
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+    width: 100%;
+
+}
+
+h4 {
+    font-size: 1.6rem;
+}
+
+h5 {
+    font-size: 1.4rem;
+}
+
+small {
+    font-size: 1.4rem;
+}
+
+/* Header section */
+
+.header {
+    width: 100%;
+    background-color: var(--white);
+    padding: 1rem 0 1rem 0;
+    position: relative;
+}
+
+.logo {
+    height: 35px;
+}
+
+.header hr {
+    width: 100%;
+    position: absolute;
+    bottom: 2px;
+    border: 0;
+    height: 1px;
+    background: var(--black);
+    background-image: linear-gradient(to right, var(--white), var(--black), var(--white));
+}
+
+/* Main section */
+
+.main {
+    padding: 3rem 0 6rem 0;
+}
+
+.site-title {
+    margin: 0 0 3rem 0;
+    color: var(--white);
+}
+
+.columns {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.place, .setting {
+    border-radius: 1rem;
+    padding: 1.6rem;
+}
+
+
+.place, .setting {
+    background-color: var(--grey);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    width: 100%;
+}
+
+#result {
+    width: 100%;
+    background-color: var(--white);
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-clip: padding-box;
+    border: solid 0.8rem transparent;
+    border-radius: 1rem;
+    padding: 1.6rem;
+}
+
+
+#result::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -0.8rem;
+    border-radius: 1rem;
+    background: linear-gradient(60deg, rgba(255,255,100,1) 0%, rgba(255,190,70,1) 35%, rgba(255,255,100,1) 100%);
+}
+
+
+
+
+.place input, .place select, .setting select  {
+    font-family: 'Noto Serif', serif;
+    border-radius: 1rem;
+    border: 0.1rem solid var(--black);
+    padding: 0.5rem;
+}
+
+
+.place div, .setting div {
+    width: 100%;
+    margin: 1.6rem 0 0 0;
+}
+
+.place input, .place select, .setting select {
+    width: 80%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.place hr {
+    overflow: visible;
+    border: none;
+    border-top: 0.1rem solid var(--black);
+    width: 100%;
+    margin: 3rem 0 0 0;
+    text-align: center;
+    padding: 0;
+}
+
+.place hr:after {
+    content: "OR";
+    display: inline-block;
+    position: relative;
+    top: -1.3rem;
+    font-size: 1.6rem;
+    background-color: var(--grey);
+}
+
+/* Google Material Icons */
+
+.place div span, .setting div span {
+    margin: 0 0.5rem 0 0.5rem;
+    vertical-align: middle;
+}
+
+.hidden {
+    display: none;
+    color: blue;
+}
+
+/* Result table */
+
+table, th, td {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    vertical-align: middle;
+}
+
+table tr th, table tr td {
+    padding: 1rem;
+}
+
+table tr th:first-child {
+    width: 30%;
+}
+
+table tr th:nth-child(2) {
+    width: 70%;
+}
+
+table thead {
+    background-color: var(--grey);
+}
+
+table tr td:first-child {
+    border-right: 0.2rem solid var(--grey);
+}
+
+.capitalize {
+    text-transform: capitalize;
+    /* font-weight: bold; */
+}
+
+/* Loading */
+
+.loading {
+    color: grey;
+    animation: rotation 1s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}
+
+/* Result notes */
+
+.notes {
+    margin: 3rem 0 0 0;    
+}
+
+/* Footer section */
+
+.footer {
+    width: 100%;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 3rem 0 3rem 0;
+}
+
+.footer .container .columns {
+    width: 100%;
+}
+
+.footer .container .columns div:first-child {
+    width: 100%;
+}
+
+.footer .container .columns div:nth-child(2) {
+    width: 100%;
+}
+
+.footer a {
+    color: var(--white);
+}
+
+.footer .container hr {
+    border: none;
+    border-top: 0.1rem solid var(--grey);
+    width: 100%;
+    margin: 3rem 0 1rem 0;
+}
+
+@media (min-width: 576px) {
+    /* body {background-color: red;} */
+
+}
+
+
+@media (min-width: 768px) {
+    .logo {
+        height: 40px;
+    }
+    .place, .setting {
+        width: 43%;
+    }
+    .footer .container .columns div:first-child {
+        width: 40%;
+    }
+    
+    .footer .container .columns div:nth-child(2) {
+        width: 50%;
+    }
+    .columns {
+        gap: 1rem;
+    }
+
+    /* body {background-color: orange;} */
+}
+
+
+@media (min-width: 992px) {
+    .logo {
+        height: 45px;
+    }
+
+    .place, .setting {
+        width: 26%;
+    }
+    
+    #result{
+        width: 35%;
+    }
+    
+    /* body {background-color: yellow;} */
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 90%;    
+    }
+    .logo {
+        height: 50px;
+    }
+
+    /* body {background-color: green;} */
+
+}
+
+@media (min-width: 1400px) {
+    .container {
+        width: 80%;
+    }
+    /* body {background-color: pink;} */
+
+}

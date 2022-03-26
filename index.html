@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK House Price Lookup: A tool to check house price statistics for small areas in England and
+        Wales</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZSL3LPW8V"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-7ZSL3LPW8V');
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <a href="https://hkpub.uk">
+                <img class="logo" src="HKPub_Logo_Wordpress.svg" alt="The Hong Kong Pub logo">
+            </a>
+        </div>
+        <hr>
+    </div>
+
+    <div class="main">
+        <div class="container">
+            <div class="site-title">
+                <h1>UK House Price Lookup</h1>
+                <p>A tool to check house price statistics for small areas in England and Wales</p>
+            </div>
+            <div class="columns">
+                <div class="place">
+                    <h3>What place you're checking?</h3>
+                    <p>Select from dropdown lists</p>
+                    <div>
+                        <label for="countries-menu">
+                            <span class="material-icons-outlined">outlined_flag</span>
+                        </label>
+                        <select id="countries-menu" name="countries-menu">
+                            <option value="">Choose a country</option>
+                            <option value="england">England</option>
+                            <option value="wales">Wales</option>
+                        </select>
+                    </div>
+                    <div id="regions" class="hidden">
+                        <label for="regions-menu">
+                            <span class="material-icons-outlined">explore</span>
+                        </label>
+                        <select id="regions-menu" name="regions-menu">
+                            <option value="">Choose a region</option>
+                        </select>
+                    </div>
+                    <div id="places" class="hidden">
+                        <label for="places-menu">
+                            <span class="material-icons-outlined">location_city</span>
+                        </label>
+                        <select id="places-menu" name="places-menu">
+                        </select>
+                    </div>
+                    <hr>
+                    <p>Type here to search</p>
+                    <div>
+                        <label for="input">
+                            <span class="material-icons-outlined">search</span>
+                        </label>
+                        <input type="text" id="input" name="input"
+                            placeholder="e.g. Manchester, Birmingham, Liverpool...">
+                    </div>
+                </div>
+
+                <div class="setting hidden">
+                    <h3>Filter settings</h3>
+                    <div>
+                        <label for="property-status">
+                            <span class="material-icons-outlined">construction</span>
+                        </label>
+                        <select id="property-status" name="property-status">
+                            <option value="">Choose a property status</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="house-price-variable">
+                            <span class="material-icons-outlined">currency_pound</span>
+                        </label>
+                        <select id="house-price-variable" name="house-price-variable">
+                            <option value="">Choose a house price variable</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="property-type">
+                            <span class="material-icons-outlined">other_houses</span>
+                        </label>
+                        <select id="property-type" name="property-type">
+                            <option value="">Choose a property type</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="year">
+                            <span class="material-icons-outlined">schedule</span>
+                        </label>
+                        <select id="year" name="year">
+                            <option value="">Choose a year</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="result" class="hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="columns">
+                <div>
+                    <h5>About this tool</h5>
+                    <p>
+                        <small>
+                            UK House Price Lookup is a tool, developed by <a href="https://hkpub.uk">The Hong Kong
+                                Pub</a>, for users to check house price statistics for small areas in England and Wales.
+                            The datasets are provided by <a href="https://developer.ons.gov.uk/" target="_blank">the
+                                Office for National Statistics API</a>.
+                        </small>
+                    </p>
+                </div>
+                <div>
+                    <h5>Disclaimer about information accuracy</h5>
+                    <p>
+                        <small>
+                            Although every effort has been made to provide complete and accurate information, The Hong
+                            Kong Pub makes no warranties, express or implied, or representations as to the accuracy of
+                            content on this website. The Hong Kong Pub assumes no liability or responsibility for any
+                            error or omissions in the information contained in the website or the operation of the
+                            website.
+                        </small>
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <p>
+                <small>Copyright © 2022 The Hong Kong Pub.</small>
+            </p>
+        </div>
+    </div>
+    <script src="utils.js"></script>
+    <script src="index.js"></script>
+    <script src="geo.js"></script>
+    <script src="dimensions.js"></script>
+    <script src="places.js"></script>
+</body>
+
+</html>
