@@ -7,8 +7,8 @@
     --grey: #f2f2f2;
     --light-grey: #fbfbfd;
     --white: #ffffff;
-    background: rgb(40,40,40);
-    background: linear-gradient(90deg, rgba(40,40,40,1) 0%, rgba(65,85,110,1) 35%, rgba(40,40,40,1) 100%);
+    --dark-blue: #0e1b2e;
+    background-color: var(--white);
 }
 
 body {
@@ -49,7 +49,7 @@ a:active {
 
 .container {
     margin: auto;
-    width: 95%;
+    width: 90%;
     /* background-color: burlywood; */
 }
 
@@ -84,7 +84,7 @@ small {
 
 .header {
     width: 100%;
-    background-color: var(--white);
+    background-color: var(--grey);
     padding: 1rem 0 1rem 0;
     position: relative;
 }
@@ -111,7 +111,7 @@ small {
 
 .site-title {
     margin: 0 0 3rem 0;
-    color: var(--white);
+    color: var(--black);
 }
 
 .columns {
@@ -146,7 +146,7 @@ small {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     background-clip: padding-box;
-    border: solid 0.8rem transparent;
+    border: solid 0.2rem transparent;
     border-radius: 1rem;
     padding: 1.6rem;
 }
@@ -157,7 +157,7 @@ small {
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
     z-index: -1;
-    margin: -0.8rem;
+    margin: -0.2rem;
     border-radius: 1rem;
     background: linear-gradient(60deg, rgba(255,255,100,1) 0%, rgba(255,190,70,1) 35%, rgba(255,255,100,1) 100%);
 }
@@ -167,22 +167,20 @@ small {
 
 .place input, .place select, .setting select  {
     font-family: 'Noto Serif', serif;
-    border-radius: 1rem;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
     border: 0.1rem solid var(--black);
     padding: 0.5rem;
+    width: 80%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 
 .place div, .setting div {
     width: 100%;
     margin: 1.6rem 0 0 0;
-}
-
-.place input, .place select, .setting select {
-    width: 80%;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
 }
 
 .place hr {
@@ -277,7 +275,7 @@ table tr td:first-child {
 
 .footer {
     width: 100%;
-    background-color: var(--black);
+    background-color: var(--dark-blue);
     color: var(--white);
     padding: 3rem 0 3rem 0;
 }
@@ -350,15 +348,10 @@ table tr td:first-child {
 }
 
 @media (min-width: 1200px) {
-    .container {
-        width: 90%;    
-    }
     .logo {
         height: 50px;
     }
-
     /* body {background-color: green;} */
-
 }
 
 @media (min-width: 1400px) {
